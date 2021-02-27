@@ -18,17 +18,7 @@
     integrity="sha512-K0Vddb4QdnVOAuPJBHkgrua+/A9Moyv8AQEWi0xndQ+fqbRfAFd47z4A9u1AW/spLO0gEaiE1z98PK1gl5mC5Q=="
     crossorigin=""></script>
 
-  <script>
-    // Set map location scale
-    var map = L.map('map').setView([66.000, -103.027], 3);
-    // set basemap type
-    L.esri.basemapLayer('Gray').addTo(map);
-    // add layer from REST service
-    L.esri.featureLayer({
-      url: 'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab2/DalangfoCanada/MapServer/0',
-      opacity: 0.7
-    }).addTo(map);
-  </script>
+
 
   <style>
     body { margin:0; padding:0; }
@@ -42,6 +32,18 @@
 <body>
 <!-- Div to hold the leaflet map -->
 <div id="map"></div>
+
+  <script> // THIS HAS TO BE HERE OR ELSE THE MAP FAILS!!!!
+    // Set map location scale
+    var map = L.map('map').setView([66.000, -103.027], 3);
+    // set basemap type
+    L.esri.basemapLayer('Gray').addTo(map);
+    // add layer from REST service
+    L.esri.featureLayer({
+      url: 'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab2/DalangfoCanada/MapServer/0', // Why wont this show??
+      opacity: 0.7
+    }).addTo(map);
+  </script>
 
 </body>
 </html>
