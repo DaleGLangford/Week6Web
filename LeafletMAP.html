@@ -46,10 +46,15 @@
 
     const map = L.map('map', {
       minZoom: 2
-    }).setView([34.02,-118.805], 13);
+    }).setView([66.000, -103.027], 3);
 
     L.esri.Vector.vectorBasemapLayer(basemapEnum, {
       apiKey: apiKey
+    }).addTo(map);
+
+    // Add layer from Luna
+    var parks = L.esri.featureLayer({
+    url: "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab2/DalangfoCanada/MapServer/0"
     }).addTo(map);
 
   </script>
