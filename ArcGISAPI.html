@@ -4,29 +4,69 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
       <title>Feature Layers using ArcGIS API and REST</title>
       <style>
-        html, body, #viewDiv {
-          padding: 0;
-          margin: 0;
-          height: 100%;
-          width: 100%;
+        html, 
+        body {
+           height: 100%;
         }
+        .header{
+            margin-top:1vw;
+            text-align: center;
+            font-family: arial, helvetica, sans-serif;
+          }
+    
+        p{
+            font-size: 16pt;
+            font-family: arial, helvetica, sans-serif;
+            text-align: center;
+          }
+    
+        .link{
+          font-size: 14pt;
+          font-family: arial, helvetica, sans-serif;
+          text-decoration: none;
+          text-align: center;
+          color:#ff0000;
+          margin-bottom: 2vw;
+        }
+        #viewDiv {
+          padding: 0;
+          margin:auto;
+          align-content: center;
+          height: 100%;
+          width: 70%;
+          border-style: solid;
+          border-color: #ff0000;
+        }
+    
+       .footer {
+       background-color: #ff0000;
+       position: static;
+       width: 100%;
+       bottom: 0px;
+       left: 0px;
+       }
+          
+       .foottext {
+          color:rgb(255, 255, 255);
+          font-family: 'Montserrat', sans-serif;
+          text-align: center;
+          margin-top: 1vw;
+          margin-bottom: 0;
+          padding: 1vw;
+       }
+    
       </style>
       <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
       <script src="https://js.arcgis.com/4.18/"></script>
     
       <script>
-      require([
-        "esri/config",
-        "esri/Map",
-        "esri/views/MapView",
-        "esri/layers/FeatureLayer"
-    
-      ], function(esriConfig,Map, MapView, FeatureLayer) {
+      require(["esri/config","esri/Map","esri/views/MapView","esri/layers/FeatureLayer"], 
+      function(esriConfig,Map, MapView, FeatureLayer) {
     
       esriConfig.apiKey = "AAPK1b667b7ea0c146389c2a3ca2c2c7a49ah_8L0KmrZgOmUlOSUAL6NKwysRI-T3zJv3vm6qv20AkgmLA-WYEESKGaWjrmwkZL";
     
       const map = new Map({
-        basemap: "arcgis-topographic"
+        basemap: "gray"
       });
     
       const view = new MapView({
@@ -48,6 +88,18 @@
     
     </head>
     <body>
-      <div id="viewDiv"></div>
+        <div>
+        <h1 class="header"> Lets Learn About Canadian Provinces!</h1>
+        <p> Explore the map below to learn more about Canada's Provinces</p>
+        <!-- <p><a class="link" href="index.html"> Return to Week 3 Home</a></p> -->
+        </div>
+    
+        <!-- use the id of the map to call in the map function-->
+        <div id="viewDiv"></div>
+    
+        <!-- footer -->
+    <div class = "footer">
+    <p class = "foottext"> Thank you for visiting - Dale Langford 2021</p>
+    </div>
     </body>
     </html>
