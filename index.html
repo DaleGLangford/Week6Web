@@ -23,7 +23,7 @@
     var map = L.map('map').setView([66.000, -103.027], 3);
     // set basemap type
     L.esri.basemapLayer('Gray').addTo(map);
-    
+    // add layer from REST service
     L.esri.featureLayer({
       url: 'https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab2/DalangfoCanada/MapServer/0',
       opacity: 0.7
