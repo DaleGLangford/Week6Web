@@ -1,0 +1,122 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+      <title>ArcGIS API for JavaScript Tutorials: Add a feature layer</title>
+      <style>
+        html, body, #viewDiv {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          width: 100%;
+        }
+      </style>
+      <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+      <script src="https://js.arcgis.com/4.18/"></script>
+    
+      <script>
+      require([
+        "esri/config",
+        "esri/Map",
+        "esri/views/MapView",
+    
+        "esri/layers/FeatureLayer"
+    
+      ], function(esriConfig,Map, MapView, FeatureLayer) {
+    
+      esriConfig.apiKey = "AAPK1b667b7ea0c146389c2a3ca2c2c7a49ah_8L0KmrZgOmUlOSUAL6NKwysRI-T3zJv3vm6qv20AkgmLA-WYEESKGaWjrmwkZL";
+    
+      const map = new Map({
+        basemap: "arcgis-topographic"
+      });
+    
+      const view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [-118.80543,34.02700],
+        zoom: 13
+      });
+    
+    // Add provinces feature layer from Luna
+      const provinces = new FeatureLayer({
+        url: "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab2/DalangfoCanada/MapServer/0"
+      });
+    
+      map.add(provinces, 0);
+    
+      });
+    </script>
+    
+    </head>
+    <body>
+      <div id="viewDiv"></div>
+    </body>
+    </html>
